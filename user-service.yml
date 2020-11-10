@@ -1,6 +1,6 @@
-user:
+user-auth:
   port: 3333
   discovery:
     port: 1111
   docker:
-    datasource: mongodb://docker-mongodb:27017/
+    datasource: jdbc:mysql://localhost:3306/userDb?useSSL=false
