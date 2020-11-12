@@ -1,6 +1,8 @@
-customer:
+category:
   port: 2222
   discovery:
     port: 1111
   docker:
     datasource: mongodb://docker-mongodb:27017/
+spring:
+  profiles: docker
