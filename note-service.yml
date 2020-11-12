@@ -4,3 +4,25 @@ customer:
     port: 1111
   docker:
     datasource: mongodb://docker-mongodb:27017/
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      database: notedb
+      port: 27017
+      uri: mongodb://localhost:27017/
+  application:
+    name: note-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/ # using eureka instead of localhost
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress: true
