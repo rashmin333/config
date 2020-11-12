@@ -32,12 +32,9 @@ spring:
   profiles: dev
   data:
     mongodb:
-      username: root
-      password: root123
       database: categorydb
       port: 27017
-      uri: mongodb://root:root123@127.0.0.1:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
-      authentication-database: admin
+      uri: mongodb://127.0.0.1:27017/
   application:
     name: category-service
   rabbitmq:
