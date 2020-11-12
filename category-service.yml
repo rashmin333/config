@@ -6,3 +6,23 @@ category:
     datasource: mongodb://docker-mongodb:27017/
 spring:
   profiles: docker
+  data:
+    mongodb:
+      database: categorydb
+      port: 27017
+      uri: mongodb://docker-mongodb:27017/
+  application:
+    name: category-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/ # using eureka instead of localhost
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress: true
