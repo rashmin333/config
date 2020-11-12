@@ -3,14 +3,14 @@ category:
   discovery:
     port: 1111
   docker:
-    datasource: mongodb://docker-mongodb:27017/
+    datasource: mongodb://root:root123@127.0.0.1:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
 spring:
   profiles: dev
   data:
     mongodb:
       database: categorydb
       port: 27017
-      uri: mongodb://root:root123@127.0.0.1:27017/
+      uri: mongodb://root:root123@127.0.0.1:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
   application:
     name: category-service
   rabbitmq:
