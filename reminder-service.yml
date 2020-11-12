@@ -4,3 +4,50 @@ customer:
     port: 1111
   docker:
     datasource: mongodb://docker-mongodb:27017/
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      database: reminderdb
+      port: 27017
+      uri: mongodb://root:root123@localhost:27017/
+  application:
+    name: reminder-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/ # using eureka instead of localhost
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress: true
+    
+---
+
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      database: reminderdb
+      port: 27017
+      uri: mongodb://root:root123@localhost:27017/
+  application:
+    name: reminder-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/ # using eureka instead of localhost
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress: true
