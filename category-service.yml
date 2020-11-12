@@ -11,6 +11,7 @@ spring:
       database: categorydb
       port: 27017
       uri: mongodb://docker-mongodb:27017/
+      authentication-database: admin
   application:
     name: category-service
   rabbitmq:
@@ -34,6 +35,7 @@ spring:
       database: categorydb
       port: 27017
       uri: mongodb://root:root123@127.0.0.1:27017/
+      authentication-database: admin
   application:
     name: category-service
   rabbitmq:
