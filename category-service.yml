@@ -34,7 +34,7 @@ spring:
     mongodb:
       database: categorydb
       port: 27017
-      uri: mongodb://27.0.0.1:27017/
+      uri: mongodb://127.0.0.1:27017/
   application:
     name: category-service
   rabbitmq:
