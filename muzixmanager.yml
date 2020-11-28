@@ -1,0 +1,29 @@
+muzixmanager:
+  port: 2222
+  discovery:
+    port: 1111
+  docker:
+    datasource: mongodb://127.0.0.1:27017/
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      database: muzixmanagerdb
+      port: 27017
+      uri: mongodb://127.0.0.1:27017/
+      authentication-database: admin
+  application:
+    name: muzixmanager-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:1111/eureka/ # using eureka instead of localhost
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress: true
